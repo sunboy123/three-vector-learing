@@ -13,6 +13,7 @@ let geometry = new THREE.BoxGeometry(1,1,1);
 let material = new THREE.MeshBasicMaterial({color:0xffffff})
 let cube = new THREE.Mesh(geometry,material);
 scene.add(cube);// 添加到场景中
+scene.color = 0xff00ff
 
 camera.position.z = 5; //默认位置是0 0 0
 
@@ -20,7 +21,7 @@ camera.position.z = 5; //默认位置是0 0 0
 function animate() {
     // 每一帧不断循环渲染
     requestAnimationFrame(animate);
-    // cube.rotation.x += 0.01;
+    cube.rotation.x += 0.01;
     cube.rotation.y += 0.01;
     renderer.render(scene,camera);
 }
